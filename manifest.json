@@ -11,6 +11,7 @@
   ],
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "page" : "background.html",
+    "persistent": true
   }
 }
