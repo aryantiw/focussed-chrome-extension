@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "Social Media Blocker",
+  "version": "1.0",
+  "description": "Blocks access to social media websites.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
