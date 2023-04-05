@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  
   "name": "Social Media Blocker",
   "version": "1.0",
   "description": "Blocks social media sites.",
@@ -10,11 +10,11 @@
   ],
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "persistent": true
   },
  
   "browser_action": {
-    "default_icon": "icon16.png",
+    
     "default_popup": "popup.html"
   },
   "options_page": "options.html",
