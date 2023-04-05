@@ -2,16 +2,25 @@
   "manifest_version": 2,
   "name": "Social Media Blocker",
   "version": "1.0",
-  "description": "Blocks access to social media websites.",
+  "description": "Blocks social media sites.",
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "http://*/*",
     "https://*/*"
   ],
   "background": {
-  
-    "page" : "background.html",
-    "persistent": true
-  }
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon16.png",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "manifest_version": 2
 }

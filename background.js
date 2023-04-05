@@ -1,15 +1,20 @@
-// List of social media websites to block
-var blockedSites = [  "*://www.facebook.com/*",  "*://www.twitter.com/*",  "*://www.instagram.com/*"];
-
-// Listen for web requests and block them if they match a blocked site
+// Listen for web requests
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
-    for (var i = 0; i < blockedSites.length; i++) {
-      if (details.url.match(blockedSites[i])) {
-        return {cancel: true};
-      }
+    // Define an array of social media sites to block
+    var blockedSites = [
+      "*://*.facebook.com/*",
+      "*://*.twitter.com/*",
+      "*://*.instagram.com/*"
+      // Add more social media sites to block as needed
+    ];
+
+    // Check if the request URL matches any of the blocked sites
+    if (blockedSites.some(site => details.url.includes(site))) {
+      // Cancel the request to block the site
+      return { cancel: true };
     }
   },
-  {urls: ["<all_urls>"]},
+  { urls: ["<all_urls>"] },
   ["blocking"]
 );
